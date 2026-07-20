@@ -1,4 +1,4 @@
-# Multi-Store Stock Sync
+# Mountaineering Labs Stock Sync
 
 Central stock management across multiple WooCommerce installations. Run several stores (for example a Norwegian and an English site selling the same products) and keep stock quantities in sync automatically.
 
@@ -22,7 +22,7 @@ Central stock management across multiple WooCommerce installations. Run several 
 
 ## Languages
 
-The admin UI is in English, with bundled translations for Norwegian (bokmål and nynorsk), German, French, Spanish, Danish and Swedish. The correct language is picked automatically from each site's WordPress language setting.
+The admin UI is in English and fully internationalized. Translation files for Norwegian (bokmål and nynorsk), German, French, Spanish, Danish and Swedish live in `languages/` in this repository (used when installing from GitHub). The wordpress.org distribution receives translations automatically via translate.wordpress.org instead.
 
 ## Requirements
 

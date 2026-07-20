@@ -22,6 +22,14 @@ class WCSS_Settings {
 	private function __construct() {
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
+	}
+
+	public function enqueue_assets( $hook_suffix ) {
+		if ( 'woocommerce_page_wcss-settings' !== $hook_suffix ) {
+			return;
+		}
+		wp_enqueue_script( 'wcss-admin', WCSS_URL . 'js/admin.js', array(), WCSS_VERSION, true );
 	}
 
 	public static function get() {
@@ -38,8 +46,8 @@ class WCSS_Settings {
 	public function add_menu() {
 		add_submenu_page(
 			'woocommerce',
-			__( 'Stock Sync', 'multi-store-stock-sync' ),
-			__( 'Stock Sync', 'multi-store-stock-sync' ),
+			__( 'Stock Sync', 'mountaineering-labs-stock-sync' ),
+			__( 'Stock Sync', 'mountaineering-labs-stock-sync' ),
 			'manage_woocommerce',
 			'wcss-settings',
 			array( $this, 'render_page' )
@@ -69,58 +77,58 @@ class WCSS_Settings {
 			$settings                  = self::get();
 			$settings['shared_secret'] = wp_generate_password( 40, false );
 			update_option( self::OPTION_KEY, $settings );
-			echo '<div class="notice notice-success"><p>' . esc_html__( 'New shared secret generated. Remember to set the same value on ALL connected sites.', 'multi-store-stock-sync' ) . '</p></div>';
+			echo '<div class="notice notice-success"><p>' . esc_html__( 'New shared secret generated. Remember to set the same value on ALL connected sites.', 'mountaineering-labs-stock-sync' ) . '</p></div>';
 		}
 
 		if ( isset( $_POST['wcss_resync'] ) && check_admin_referer( 'wcss_resync' ) ) {
 			$count = WCSS_Client::instance()->resync_all();
 			/* translators: %d: number of products/variations queued. */
-			echo '<div class="notice notice-success"><p>' . esc_html( sprintf( __( 'Full resync queued for %d product(s)/variation(s).', 'multi-store-stock-sync' ), $count ) ) . '</p></div>';
+			echo '<div class="notice notice-success"><p>' . esc_html( sprintf( __( 'Full resync queued for %d product(s)/variation(s).', 'mountaineering-labs-stock-sync' ), $count ) ) . '</p></div>';
 		}
 
 		$settings = self::get();
 		?>
 		<div class="wrap">
-			<h1><?php esc_html_e( 'Multi-Store Stock Sync', 'multi-store-stock-sync' ); ?></h1>
-			<p><?php esc_html_e( 'Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites.', 'multi-store-stock-sync' ); ?></p>
+			<h1><?php esc_html_e( 'Mountaineering Labs Stock Sync', 'mountaineering-labs-stock-sync' ); ?></h1>
+			<p><?php esc_html_e( 'Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites.', 'mountaineering-labs-stock-sync' ); ?></p>
 
 			<form method="post" action="options.php">
 				<?php settings_fields( 'wcss_settings_group' ); ?>
 				<table class="form-table">
 					<tr>
-						<th><label for="wcss_role"><?php esc_html_e( 'Role', 'multi-store-stock-sync' ); ?></label></th>
+						<th><label for="wcss_role"><?php esc_html_e( 'Role', 'mountaineering-labs-stock-sync' ); ?></label></th>
 						<td>
 							<select name="<?php echo esc_attr( self::OPTION_KEY ); ?>[role]" id="wcss_role">
-								<option value="spoke" <?php selected( $settings['role'], 'spoke' ); ?>><?php esc_html_e( 'Spoke', 'multi-store-stock-sync' ); ?></option>
-								<option value="hub" <?php selected( $settings['role'], 'hub' ); ?>><?php esc_html_e( 'Hub', 'multi-store-stock-sync' ); ?></option>
+								<option value="spoke" <?php selected( $settings['role'], 'spoke' ); ?>><?php esc_html_e( 'Spoke', 'mountaineering-labs-stock-sync' ); ?></option>
+								<option value="hub" <?php selected( $settings['role'], 'hub' ); ?>><?php esc_html_e( 'Hub', 'mountaineering-labs-stock-sync' ); ?></option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<th><label for="wcss_site_id"><?php esc_html_e( 'Site ID', 'multi-store-stock-sync' ); ?></label></th>
+						<th><label for="wcss_site_id"><?php esc_html_e( 'Site ID', 'mountaineering-labs-stock-sync' ); ?></label></th>
 						<td>
-							<input type="text" class="regular-text" id="wcss_site_id" name="<?php echo esc_attr( self::OPTION_KEY ); ?>[site_id]" value="<?php echo esc_attr( $settings['site_id'] ); ?>" placeholder="<?php esc_attr_e( 'e.g. main-store', 'multi-store-stock-sync' ); ?>" />
-							<p class="description"><?php esc_html_e( 'Unique short identifier for this site (used in logs and to avoid loops).', 'multi-store-stock-sync' ); ?></p>
+							<input type="text" class="regular-text" id="wcss_site_id" name="<?php echo esc_attr( self::OPTION_KEY ); ?>[site_id]" value="<?php echo esc_attr( $settings['site_id'] ); ?>" placeholder="<?php esc_attr_e( 'e.g. main-store', 'mountaineering-labs-stock-sync' ); ?>" />
+							<p class="description"><?php esc_html_e( 'Unique short identifier for this site (used in logs and to avoid loops).', 'mountaineering-labs-stock-sync' ); ?></p>
 						</td>
 					</tr>
 					<tr>
-						<th><label for="wcss_secret"><?php esc_html_e( 'Shared secret', 'multi-store-stock-sync' ); ?></label></th>
+						<th><label for="wcss_secret"><?php esc_html_e( 'Shared secret', 'mountaineering-labs-stock-sync' ); ?></label></th>
 						<td>
 							<input type="text" class="regular-text" id="wcss_secret" name="<?php echo esc_attr( self::OPTION_KEY ); ?>[shared_secret]" value="<?php echo esc_attr( $settings['shared_secret'] ); ?>" />
 						</td>
 					</tr>
 					<tr class="wcss-spoke-only">
-						<th><label for="wcss_hub_url"><?php esc_html_e( 'Hub URL', 'multi-store-stock-sync' ); ?></label></th>
+						<th><label for="wcss_hub_url"><?php esc_html_e( 'Hub URL', 'mountaineering-labs-stock-sync' ); ?></label></th>
 						<td>
 							<input type="url" class="regular-text" id="wcss_hub_url" name="<?php echo esc_attr( self::OPTION_KEY ); ?>[hub_url]" value="<?php echo esc_attr( $settings['hub_url'] ); ?>" placeholder="https://example.com" />
-							<p class="description"><?php esc_html_e( 'Only relevant when role = Spoke.', 'multi-store-stock-sync' ); ?></p>
+							<p class="description"><?php esc_html_e( 'Only relevant when role = Spoke.', 'mountaineering-labs-stock-sync' ); ?></p>
 						</td>
 					</tr>
 					<tr class="wcss-hub-only">
-						<th><label for="wcss_spoke_urls"><?php esc_html_e( 'Spoke URLs', 'multi-store-stock-sync' ); ?></label></th>
+						<th><label for="wcss_spoke_urls"><?php esc_html_e( 'Spoke URLs', 'mountaineering-labs-stock-sync' ); ?></label></th>
 						<td>
 							<textarea class="large-text" rows="4" id="wcss_spoke_urls" name="<?php echo esc_attr( self::OPTION_KEY ); ?>[spoke_urls]" placeholder="https://store2.example&#10;https://store3.example"><?php echo esc_textarea( $settings['spoke_urls'] ); ?></textarea>
-							<p class="description"><?php esc_html_e( 'One URL per line. Only relevant when role = Hub.', 'multi-store-stock-sync' ); ?></p>
+							<p class="description"><?php esc_html_e( 'One URL per line. Only relevant when role = Hub.', 'mountaineering-labs-stock-sync' ); ?></p>
 						</td>
 					</tr>
 				</table>
@@ -128,46 +136,35 @@ class WCSS_Settings {
 			</form>
 
 			<hr />
-			<h2><?php esc_html_e( 'Generate new shared secret', 'multi-store-stock-sync' ); ?></h2>
+			<h2><?php esc_html_e( 'Generate new shared secret', 'mountaineering-labs-stock-sync' ); ?></h2>
 			<form method="post">
 				<?php wp_nonce_field( 'wcss_generate_secret' ); ?>
-				<button type="submit" name="wcss_generate_secret" class="button"><?php esc_html_e( 'Generate', 'multi-store-stock-sync' ); ?></button>
+				<button type="submit" name="wcss_generate_secret" class="button"><?php esc_html_e( 'Generate', 'mountaineering-labs-stock-sync' ); ?></button>
 			</form>
 
 			<?php if ( 'hub' === $settings['role'] ) : ?>
 				<hr />
-				<h2><?php esc_html_e( 'Full resync', 'multi-store-stock-sync' ); ?></h2>
-				<p><?php esc_html_e( 'Queues the current stock level of every product/variation with an SKU on this (hub) site for delivery to all spokes. Use after initial setup, or if something has gone out of sync.', 'multi-store-stock-sync' ); ?></p>
+				<h2><?php esc_html_e( 'Full resync', 'mountaineering-labs-stock-sync' ); ?></h2>
+				<p><?php esc_html_e( 'Queues the current stock level of every product/variation with an SKU on this (hub) site for delivery to all spokes. Use after initial setup, or if something has gone out of sync.', 'mountaineering-labs-stock-sync' ); ?></p>
 				<form method="post">
 					<?php wp_nonce_field( 'wcss_resync' ); ?>
-					<button type="submit" name="wcss_resync" class="button button-primary"><?php esc_html_e( 'Run full resync', 'multi-store-stock-sync' ); ?></button>
+					<button type="submit" name="wcss_resync" class="button button-primary"><?php esc_html_e( 'Run full resync', 'mountaineering-labs-stock-sync' ); ?></button>
 				</form>
 			<?php endif; ?>
 
 			<hr />
-			<h2><?php esc_html_e( 'Outbound queue', 'multi-store-stock-sync' ); ?></h2>
+			<h2><?php esc_html_e( 'Outbound queue', 'mountaineering-labs-stock-sync' ); ?></h2>
 			<p>
 				<?php
 				/* translators: %d: number of queued messages. */
-				echo esc_html( sprintf( __( '%d message(s) awaiting delivery (including any in retry backoff).', 'multi-store-stock-sync' ), WCSS_Queue::pending_count() ) );
+				echo esc_html( sprintf( __( '%d message(s) awaiting delivery (including any in retry backoff).', 'mountaineering-labs-stock-sync' ), WCSS_Queue::pending_count() ) );
 				?>
 			</p>
 
 			<hr />
-			<h2><?php esc_html_e( 'Recent events', 'multi-store-stock-sync' ); ?></h2>
+			<h2><?php esc_html_e( 'Recent events', 'mountaineering-labs-stock-sync' ); ?></h2>
 			<?php WCSS_Logger::render_log_table(); ?>
 		</div>
-		<script>
-		(function() {
-			function toggle() {
-				var role = document.getElementById('wcss_role').value;
-				document.querySelectorAll('.wcss-spoke-only').forEach(function(el){ el.style.display = role === 'spoke' ? '' : 'none'; });
-				document.querySelectorAll('.wcss-hub-only').forEach(function(el){ el.style.display = role === 'hub' ? '' : 'none'; });
-			}
-			document.getElementById('wcss_role').addEventListener('change', toggle);
-			toggle();
-		})();
-		</script>
 		<?php
 	}
 }

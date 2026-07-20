@@ -1,13 +1,13 @@
 <?php
 return array(
-	'project-id-version' => 'Multi-Store Stock Sync 1.3.0',
+	'project-id-version' => 'Mountaineering Labs Stock Sync 1.3.0',
 	'language'           => 'nn_NO',
 	'plural-forms'       => 'nplurals=2; plural=n != 1;',
 	'x-generator'        => 'manual',
 	'messages'           => array(
-		'Multi-Store Stock Sync requires WooCommerce to be active.' => 'Multi-Store Stock Sync krev at WooCommerce er aktivert.',
+		'Mountaineering Labs Stock Sync requires WooCommerce to be active.' => 'Mountaineering Labs Stock Sync krev at WooCommerce er aktivert.',
 		'Stock Sync'                                       => 'Lagersynk',
-		'Multi-Store Stock Sync'                                    => 'Multi-Store Stock Sync',
+		'Mountaineering Labs Stock Sync'                                    => 'Mountaineering Labs Stock Sync',
 		'Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites.' => 'Sett opp éi side som hub (autoritativ lagerbeholdning) og dei andre som spoke. Same delte hemmelegheit må brukast på alle tilkopla sider.',
 		'Role'                                             => 'Rolle',
 		'Spoke'                                            => 'Spoke',

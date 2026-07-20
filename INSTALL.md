@@ -10,7 +10,7 @@ On **each** of your sites:
 
 1. Log in to wp-admin.
 2. Go to **Plugins → Add New → Upload Plugin**.
-3. Choose `multi-store-stock-sync.zip` and click **Install Now**.
+3. Choose `mountaineering-labs-stock-sync.zip` and click **Install Now**.
 4. Click **Activate**.
 
 ## Step 2 — Configure the hub

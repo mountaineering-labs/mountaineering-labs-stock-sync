@@ -28,14 +28,14 @@ class WCSS_Logger {
 	public static function render_log_table() {
 		$entries = array_reverse( get_option( self::OPTION_KEY, array() ) );
 		if ( empty( $entries ) ) {
-			echo '<p>' . esc_html__( 'No events yet.', 'multi-store-stock-sync' ) . '</p>';
+			echo '<p>' . esc_html__( 'No events yet.', 'mountaineering-labs-stock-sync' ) . '</p>';
 			return;
 		}
 		printf(
 			'<table class="widefat striped"><thead><tr><th>%s</th><th>%s</th><th>%s</th></tr></thead><tbody>',
-			esc_html__( 'Time', 'multi-store-stock-sync' ),
-			esc_html__( 'Message', 'multi-store-stock-sync' ),
-			esc_html__( 'Details', 'multi-store-stock-sync' )
+			esc_html__( 'Time', 'mountaineering-labs-stock-sync' ),
+			esc_html__( 'Message', 'mountaineering-labs-stock-sync' ),
+			esc_html__( 'Details', 'mountaineering-labs-stock-sync' )
 		);
 		foreach ( array_slice( $entries, 0, 50 ) as $entry ) {
 			printf(

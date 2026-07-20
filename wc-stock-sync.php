@@ -3,7 +3,7 @@
  * Plugin Name: WC Stock Sync
  * Plugin URI: https://github.com/mountaineering-labs/wc-stock-sync
  * Description: Central stock management across multiple WooCommerce installations (hub/spoke, SKU-based matching).
- * Version: 1.1.0
+ * Version: 1.2.0
  * Author: Mountaineering Labs
  * Author URI: https://mountaineering.no
  * License: GPL-2.0-or-later
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WCSS_VERSION', '1.1.0' );
+define( 'WCSS_VERSION', '1.2.0' );
 define( 'WCSS_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once WCSS_DIR . 'includes/class-wcss-logger.php';

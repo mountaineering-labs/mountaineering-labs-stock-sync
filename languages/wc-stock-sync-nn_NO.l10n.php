@@ -1,6 +1,6 @@
 <?php
 return array(
-	'project-id-version' => 'WC Stock Sync 1.1.0',
+	'project-id-version' => 'WC Stock Sync 1.2.0',
 	'language'           => 'nn_NO',
 	'plural-forms'       => 'nplurals=2; plural=n != 1;',
 	'x-generator'        => 'manual',

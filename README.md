@@ -20,6 +20,10 @@ Central stock management across multiple WooCommerce installations. Run several 
 - Sites communicate over a dedicated REST endpoint (`/wp-json/stock-sync/v1/webhook`) authenticated with an **HMAC-SHA256 signature** over a shared secret — no WooCommerce API keys needed.
 - Requests older than 5 minutes are rejected, and duplicate message ids are ignored (replay protection).
 
+## Languages
+
+The admin UI is in English, with bundled translations for Norwegian (bokmål and nynorsk), German, French, Spanish, Danish and Swedish. The correct language is picked automatically from each site's WordPress language setting.
+
 ## Requirements
 
 - WordPress 6.5+

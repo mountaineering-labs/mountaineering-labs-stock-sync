@@ -1,10 +1,10 @@
-=== WC Stock Sync – Multi-Store Stock Synchronization for WooCommerce ===
+=== Multi-Store Stock Sync for WooCommerce ===
 Contributors: mountaineeringlabs
 Tags: woocommerce, stock, synchronization, multistore, inventory
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,10 @@ Ask your host about loopback requests and the number of concurrent PHP workers. 
 Identical SKUs are strongly recommended, but the `wcss_resolve_sku` filter lets developers map incoming SKUs to local product IDs in code.
 
 == Changelog ==
+
+= 1.3.0 =
+* Renamed to Multi-Store Stock Sync for WooCommerce (trademark compliance).
+* Hardened SQL statements and cleaned up coding-standard warnings.
 
 = 1.2.0 =
 * Added German, French, Spanish, Danish and Swedish translations.

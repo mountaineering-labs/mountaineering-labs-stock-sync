@@ -1,13 +1,13 @@
 <?php
 return array(
-	'project-id-version' => 'WC Stock Sync 1.2.0',
+	'project-id-version' => 'Multi-Store Stock Sync 1.3.0',
 	'language'           => 'da_DK',
 	'plural-forms'       => 'nplurals=2; plural=n != 1;',
 	'x-generator'        => 'manual',
 	'messages'           => array(
-		'WC Stock Sync requires WooCommerce to be active.' => 'WC Stock Sync kræver, at WooCommerce er aktiveret.',
+		'Multi-Store Stock Sync requires WooCommerce to be active.' => 'Multi-Store Stock Sync kræver, at WooCommerce er aktiveret.',
 		'Stock Sync'                                       => 'Lagersynk',
-		'WC Stock Sync'                                    => 'WC Stock Sync',
+		'Multi-Store Stock Sync'                                    => 'Multi-Store Stock Sync',
 		'Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites.' => 'Opsæt ét website som hub (autoritativ lagerbeholdning) og de andre som spokes. Den samme delte hemmelighed skal bruges på alle forbundne websites.',
 		'Role'                                             => 'Rolle',
 		'Spoke'                                            => 'Spoke',

@@ -65,6 +65,7 @@ class WCSS_Queue {
 	public static function enqueue( $target_url, $sku, $qty, $type ) {
 		global $wpdb;
 
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table, no WP API exists for it.
 		$wpdb->insert(
 			self::table_name(),
 			array(
@@ -99,9 +100,11 @@ class WCSS_Queue {
 		$table    = self::table_name();
 		$settings = WCSS_Settings::get();
 
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table; queue reads must not be cached.
 		$rows = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT * FROM {$table} WHERE next_attempt_at <= %s AND attempts < %d ORDER BY id ASC LIMIT 50",
+				'SELECT * FROM %i WHERE next_attempt_at <= %s AND attempts < %d ORDER BY id ASC LIMIT 50',
+				$table,
 				gmdate( 'Y-m-d H:i:s' ),
 				self::MAX_ATTEMPTS
 			)
@@ -112,7 +115,7 @@ class WCSS_Queue {
 			// so the receiver's replay protection accepts the message.
 			if ( empty( $row->msg_id ) ) {
 				$row->msg_id = wp_generate_uuid4();
-				$wpdb->update( $table, array( 'msg_id' => $row->msg_id ), array( 'id' => $row->id ), array( '%s' ), array( '%d' ) );
+				$wpdb->update( $table, array( 'msg_id' => $row->msg_id ), array( 'id' => $row->id ), array( '%s' ), array( '%d' ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table.
 			}
 
 			$ok = WCSS_Client::instance()->send_now(
@@ -127,7 +130,7 @@ class WCSS_Queue {
 			);
 
 			if ( $ok ) {
-				$wpdb->delete( $table, array( 'id' => $row->id ), array( '%d' ) );
+				$wpdb->delete( $table, array( 'id' => $row->id ), array( '%d' ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table.
 				continue;
 			}
 
@@ -135,15 +138,16 @@ class WCSS_Queue {
 
 			if ( $attempts >= self::MAX_ATTEMPTS ) {
 				WCSS_Logger::log(
-					'Gav opp køelement etter maks forsøk - kjør full resync frå hub for å rette opp avvik',
+					'Gave up on queue item after max attempts - run a full resync from the hub to correct any drift',
 					array( 'sku' => $row->sku, 'target' => $row->target_url )
 				);
-				$wpdb->delete( $table, array( 'id' => $row->id ), array( '%d' ) );
+				$wpdb->delete( $table, array( 'id' => $row->id ), array( '%d' ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table.
 				continue;
 			}
 
 			// Simple linear backoff, capped at 30 minutes between attempts.
 			$delay_minutes = min( 30, $attempts );
+			// phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table.
 			$wpdb->update(
 				$table,
 				array(
@@ -161,6 +165,7 @@ class WCSS_Queue {
 
 	public static function pending_count() {
 		global $wpdb;
-		return (int) $wpdb->get_var( 'SELECT COUNT(*) FROM ' . self::table_name() );
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery -- plugin-owned queue table; count must be live.
+		return (int) $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %i', self::table_name() ) );
 	}
 }

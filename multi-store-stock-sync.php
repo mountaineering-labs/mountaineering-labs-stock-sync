@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: WC Stock Sync
- * Plugin URI: https://github.com/mountaineering-labs/wc-stock-sync
+ * Plugin Name: Multi-Store Stock Sync for WooCommerce
+ * Plugin URI: https://github.com/mountaineering-labs/multi-store-stock-sync
  * Description: Central stock management across multiple WooCommerce installations (hub/spoke, SKU-based matching).
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: Mountaineering Labs
  * Author URI: https://mountaineering.no
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wc-stock-sync
+ * Text Domain: multi-store-stock-sync
  * Domain Path: /languages
  * Requires at least: 6.5
  * Requires PHP: 7.4
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WCSS_VERSION', '1.2.0' );
+define( 'WCSS_VERSION', '1.3.0' );
 define( 'WCSS_DIR', plugin_dir_path( __FILE__ ) );
 
 require_once WCSS_DIR . 'includes/class-wcss-logger.php';
@@ -30,13 +30,6 @@ require_once WCSS_DIR . 'includes/class-wcss-client.php';
 require_once WCSS_DIR . 'includes/class-wcss-hooks.php';
 require_once WCSS_DIR . 'includes/class-wcss-rest.php';
 
-add_action(
-	'init',
-	function () {
-		load_plugin_textdomain( 'wc-stock-sync', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-	}
-);
-
 /**
  * Bootstraps the plugin once WooCommerce is confirmed active.
  */
@@ -45,7 +38,7 @@ function wcss_init() {
 		add_action(
 			'admin_notices',
 			function () {
-				echo '<div class="notice notice-error"><p>' . esc_html__( 'WC Stock Sync requires WooCommerce to be active.', 'wc-stock-sync' ) . '</p></div>';
+				echo '<div class="notice notice-error"><p>' . esc_html__( 'Multi-Store Stock Sync requires WooCommerce to be active.', 'multi-store-stock-sync' ) . '</p></div>';
 			}
 		);
 		return;
@@ -76,7 +69,7 @@ add_filter(
 	function ( $schedules ) {
 		$schedules['wcss_two_minutes'] = array(
 			'interval' => 2 * MINUTE_IN_SECONDS,
-			'display'  => 'Every 2 minutes (WC Stock Sync)',
+			'display'  => 'Every 2 minutes (Multi-Store Stock Sync)',
 		);
 		return $schedules;
 	}

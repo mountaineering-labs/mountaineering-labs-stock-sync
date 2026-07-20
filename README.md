@@ -1,4 +1,4 @@
-# WC Stock Sync
+# Multi-Store Stock Sync
 
 Central stock management across multiple WooCommerce installations. Run several stores (for example a Norwegian and an English site selling the same products) and keep stock quantities in sync automatically.
 

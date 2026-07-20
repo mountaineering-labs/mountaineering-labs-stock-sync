@@ -1,13 +1,13 @@
 <?php
 return array(
-	'project-id-version' => 'WC Stock Sync 1.2.0',
+	'project-id-version' => 'Multi-Store Stock Sync 1.3.0',
 	'language'           => 'es_ES',
 	'plural-forms'       => 'nplurals=2; plural=n != 1;',
 	'x-generator'        => 'manual',
 	'messages'           => array(
-		'WC Stock Sync requires WooCommerce to be active.' => 'WC Stock Sync requiere que WooCommerce esté activo.',
+		'Multi-Store Stock Sync requires WooCommerce to be active.' => 'Multi-Store Stock Sync requiere que WooCommerce esté activo.',
 		'Stock Sync'                                       => 'Sincronización de stock',
-		'WC Stock Sync'                                    => 'WC Stock Sync',
+		'Multi-Store Stock Sync'                                    => 'Multi-Store Stock Sync',
 		'Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites.' => 'Configura un sitio como hub (stock autoritativo) y los demás como spokes. Debe usarse el mismo secreto compartido en todos los sitios conectados.',
 		'Role'                                             => 'Rol',
 		'Spoke'                                            => 'Spoke',

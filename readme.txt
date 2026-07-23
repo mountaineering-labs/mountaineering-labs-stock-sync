@@ -1,10 +1,10 @@
-=== Mountaineering Labs Stock Sync for WooCommerce ===
+=== Mountaineering Labs Multi-Store Stock Sync for WooCommerce ===
 Contributors: mountaineeringlabs
 Tags: woocommerce, stock, synchronization, multistore, inventory
 Requires at least: 6.5
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,9 @@ Ask your host about loopback requests and the number of concurrent PHP workers. 
 Identical SKUs are strongly recommended, but the `wcss_resolve_sku` filter lets developers map incoming SKUs to local product IDs in code.
 
 == Changelog ==
+
+= 1.4.1 =
+* Display name now includes "Multi-Store" to better describe what the plugin does.
 
 = 1.4.0 =
 * Renamed to Mountaineering Labs Stock Sync for WooCommerce for a distinctive name.

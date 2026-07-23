@@ -1,0 +1,26 @@
+name: Deploy to WordPress.org
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to deploy (e.g. 1.4.0) — must match readme.txt Stable tag"
+        required: true
+
+jobs:
+  deploy:
+    name: Deploy to wordpress.org SVN
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: WordPress plugin deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: mountaineering-labs-stock-sync
+          ASSETS_DIR: .wordpress-org
+          VERSION: ${{ github.event.inputs.version || github.event.release.tag_name }}

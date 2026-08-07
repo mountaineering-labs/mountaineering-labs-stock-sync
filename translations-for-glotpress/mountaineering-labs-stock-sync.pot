@@ -1,0 +1,125 @@
+# Translation template for mountaineering-labs-stock-sync
+msgid ""
+msgstr ""
+"Project-Id-Version: Mountaineering Labs Multi-Store Stock Sync for WooCommerce\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: mountaineering-labs-stock-sync\n"
+
+#: includes/class-wcss-logger.php:31
+msgid "No events yet."
+msgstr ""
+
+#: includes/class-wcss-logger.php:36
+msgid "Time"
+msgstr ""
+
+#: includes/class-wcss-logger.php:37
+msgid "Message"
+msgstr ""
+
+#: includes/class-wcss-logger.php:38
+msgid "Details"
+msgstr ""
+
+#: includes/class-wcss-settings.php:49
+#: includes/class-wcss-settings.php:50
+msgid "Stock Sync"
+msgstr ""
+
+#: includes/class-wcss-settings.php:80
+msgid "New shared secret generated. Remember to set the same value on ALL connected sites."
+msgstr ""
+
+#: includes/class-wcss-settings.php:86
+msgid "Full resync queued for %d product(s)/variation(s)."
+msgstr ""
+
+#: includes/class-wcss-settings.php:92
+msgid "Mountaineering Labs Stock Sync"
+msgstr ""
+
+#: includes/class-wcss-settings.php:93
+msgid "Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites."
+msgstr ""
+
+#: includes/class-wcss-settings.php:99
+msgid "Role"
+msgstr ""
+
+#: includes/class-wcss-settings.php:102
+msgid "Spoke"
+msgstr ""
+
+#: includes/class-wcss-settings.php:103
+msgid "Hub"
+msgstr ""
+
+#: includes/class-wcss-settings.php:108
+msgid "Site ID"
+msgstr ""
+
+#: includes/class-wcss-settings.php:110
+msgid "e.g. main-store"
+msgstr ""
+
+#: includes/class-wcss-settings.php:111
+msgid "Unique short identifier for this site (used in logs and to avoid loops)."
+msgstr ""
+
+#: includes/class-wcss-settings.php:115
+msgid "Shared secret"
+msgstr ""
+
+#: includes/class-wcss-settings.php:121
+msgid "Hub URL"
+msgstr ""
+
+#: includes/class-wcss-settings.php:124
+msgid "Only relevant when role = Spoke."
+msgstr ""
+
+#: includes/class-wcss-settings.php:128
+msgid "Spoke URLs"
+msgstr ""
+
+#: includes/class-wcss-settings.php:131
+msgid "One URL per line. Only relevant when role = Hub."
+msgstr ""
+
+#: includes/class-wcss-settings.php:139
+msgid "Generate new shared secret"
+msgstr ""
+
+#: includes/class-wcss-settings.php:142
+msgid "Generate"
+msgstr ""
+
+#: includes/class-wcss-settings.php:147
+msgid "Full resync"
+msgstr ""
+
+#: includes/class-wcss-settings.php:148
+msgid "Queues the current stock level of every product/variation with an SKU on this (hub) site for delivery to all spokes. Use after initial setup, or if something has gone out of sync."
+msgstr ""
+
+#: includes/class-wcss-settings.php:151
+msgid "Run full resync"
+msgstr ""
+
+#: includes/class-wcss-settings.php:156
+msgid "Outbound queue"
+msgstr ""
+
+#: includes/class-wcss-settings.php:160
+msgid "%d message(s) awaiting delivery (including any in retry backoff)."
+msgstr ""
+
+#: includes/class-wcss-settings.php:165
+msgid "Recent events"
+msgstr ""
+
+#: mountaineering-labs-stock-sync.php:42
+msgid "Mountaineering Labs Stock Sync requires WooCommerce to be active."
+msgstr ""

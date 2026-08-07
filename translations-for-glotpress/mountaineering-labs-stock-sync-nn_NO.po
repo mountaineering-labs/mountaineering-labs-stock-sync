@@ -1,0 +1,127 @@
+# Translation of mountaineering-labs-stock-sync in Norwegian (Nynorsk)
+msgid ""
+msgstr ""
+"Project-Id-Version: Mountaineering Labs Multi-Store Stock Sync for WooCommerce\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nn_NO\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Domain: mountaineering-labs-stock-sync\n"
+
+#: includes/class-wcss-logger.php:31
+msgid "No events yet."
+msgstr "Ingen hendingar enno."
+
+#: includes/class-wcss-logger.php:36
+msgid "Time"
+msgstr "Tid"
+
+#: includes/class-wcss-logger.php:37
+msgid "Message"
+msgstr "Melding"
+
+#: includes/class-wcss-logger.php:38
+msgid "Details"
+msgstr "Detaljar"
+
+#: includes/class-wcss-settings.php:49
+#: includes/class-wcss-settings.php:50
+msgid "Stock Sync"
+msgstr "Lagersynk"
+
+#: includes/class-wcss-settings.php:80
+msgid "New shared secret generated. Remember to set the same value on ALL connected sites."
+msgstr "Ny delt hemmelegheit generert. Hugs å setje same verdi på ALLE tilkopla sider."
+
+#: includes/class-wcss-settings.php:86
+msgid "Full resync queued for %d product(s)/variation(s)."
+msgstr "Full resynkronisering lagt i kø for %d produkt/variasjon(ar)."
+
+#: includes/class-wcss-settings.php:92
+msgid "Mountaineering Labs Stock Sync"
+msgstr "Mountaineering Labs Stock Sync"
+
+#: includes/class-wcss-settings.php:93
+msgid "Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites."
+msgstr "Sett opp éi side som hub (autoritativ lagerbeholdning) og dei andre som spoke. Same delte hemmelegheit må brukast på alle tilkopla sider."
+
+#: includes/class-wcss-settings.php:99
+msgid "Role"
+msgstr "Rolle"
+
+#: includes/class-wcss-settings.php:102
+msgid "Spoke"
+msgstr "Spoke"
+
+#: includes/class-wcss-settings.php:103
+msgid "Hub"
+msgstr "Hub"
+
+#: includes/class-wcss-settings.php:108
+msgid "Site ID"
+msgstr "Side-ID"
+
+#: includes/class-wcss-settings.php:110
+msgid "e.g. main-store"
+msgstr "t.d. hovudbutikk"
+
+#: includes/class-wcss-settings.php:111
+msgid "Unique short identifier for this site (used in logs and to avoid loops)."
+msgstr "Unik, kort identifikator for denne sida (brukast i loggar og for å unngå loop)."
+
+#: includes/class-wcss-settings.php:115
+msgid "Shared secret"
+msgstr "Delt hemmelegheit"
+
+#: includes/class-wcss-settings.php:121
+msgid "Hub URL"
+msgstr "Hub-URL"
+
+#: includes/class-wcss-settings.php:124
+msgid "Only relevant when role = Spoke."
+msgstr "Berre relevant når rolle = Spoke."
+
+#: includes/class-wcss-settings.php:128
+msgid "Spoke URLs"
+msgstr "Spoke-URL-ar"
+
+#: includes/class-wcss-settings.php:131
+msgid "One URL per line. Only relevant when role = Hub."
+msgstr "Éin URL per linje. Berre relevant når rolle = Hub."
+
+#: includes/class-wcss-settings.php:139
+msgid "Generate new shared secret"
+msgstr "Generer ny delt hemmelegheit"
+
+#: includes/class-wcss-settings.php:142
+msgid "Generate"
+msgstr "Generer"
+
+#: includes/class-wcss-settings.php:147
+msgid "Full resync"
+msgstr "Full resynkronisering"
+
+#: includes/class-wcss-settings.php:148
+msgid "Queues the current stock level of every product/variation with an SKU on this (hub) site for delivery to all spokes. Use after initial setup, or if something has gone out of sync."
+msgstr "Legg gjeldande lagerbeholdning for alle produkt/variasjonar med produktnummer på denne (hub-)sida i kø for levering til alle spoke-sider. Bruk etter oppsett, eller om noko har komme ut av synk."
+
+#: includes/class-wcss-settings.php:151
+msgid "Run full resync"
+msgstr "Køyr full resynkronisering"
+
+#: includes/class-wcss-settings.php:156
+msgid "Outbound queue"
+msgstr "Utgåande kø"
+
+#: includes/class-wcss-settings.php:160
+msgid "%d message(s) awaiting delivery (including any in retry backoff)."
+msgstr "%d melding(ar) ventar på levering (inkl. eventuelle som er i retry-backoff)."
+
+#: includes/class-wcss-settings.php:165
+msgid "Recent events"
+msgstr "Siste hendingar"
+
+#: mountaineering-labs-stock-sync.php:42
+msgid "Mountaineering Labs Stock Sync requires WooCommerce to be active."
+msgstr "Mountaineering Labs Stock Sync krev at WooCommerce er aktivert."

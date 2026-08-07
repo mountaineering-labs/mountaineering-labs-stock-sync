@@ -1,0 +1,127 @@
+# Translation of mountaineering-labs-stock-sync in Swedish
+msgid ""
+msgstr ""
+"Project-Id-Version: Mountaineering Labs Multi-Store Stock Sync for WooCommerce\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Domain: mountaineering-labs-stock-sync\n"
+
+#: includes/class-wcss-logger.php:31
+msgid "No events yet."
+msgstr "Inga händelser ännu."
+
+#: includes/class-wcss-logger.php:36
+msgid "Time"
+msgstr "Tid"
+
+#: includes/class-wcss-logger.php:37
+msgid "Message"
+msgstr "Meddelande"
+
+#: includes/class-wcss-logger.php:38
+msgid "Details"
+msgstr "Detaljer"
+
+#: includes/class-wcss-settings.php:49
+#: includes/class-wcss-settings.php:50
+msgid "Stock Sync"
+msgstr "Lagersynk"
+
+#: includes/class-wcss-settings.php:80
+msgid "New shared secret generated. Remember to set the same value on ALL connected sites."
+msgstr "Ny delad hemlighet genererad. Kom ihåg att ange samma värde på ALLA anslutna webbplatser."
+
+#: includes/class-wcss-settings.php:86
+msgid "Full resync queued for %d product(s)/variation(s)."
+msgstr "Fullständig omsynkronisering köad för %d produkt(er)/variant(er)."
+
+#: includes/class-wcss-settings.php:92
+msgid "Mountaineering Labs Stock Sync"
+msgstr "Mountaineering Labs Stock Sync"
+
+#: includes/class-wcss-settings.php:93
+msgid "Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites."
+msgstr "Ställ in en webbplats som hub (auktoritativt lagersaldo) och de övriga som spokes. Samma delade hemlighet måste användas på alla anslutna webbplatser."
+
+#: includes/class-wcss-settings.php:99
+msgid "Role"
+msgstr "Roll"
+
+#: includes/class-wcss-settings.php:102
+msgid "Spoke"
+msgstr "Spoke"
+
+#: includes/class-wcss-settings.php:103
+msgid "Hub"
+msgstr "Hub"
+
+#: includes/class-wcss-settings.php:108
+msgid "Site ID"
+msgstr "Webbplats-ID"
+
+#: includes/class-wcss-settings.php:110
+msgid "e.g. main-store"
+msgstr "t.ex. huvudbutik"
+
+#: includes/class-wcss-settings.php:111
+msgid "Unique short identifier for this site (used in logs and to avoid loops)."
+msgstr "Unik, kort identifierare för denna webbplats (används i loggar och för att undvika loopar)."
+
+#: includes/class-wcss-settings.php:115
+msgid "Shared secret"
+msgstr "Delad hemlighet"
+
+#: includes/class-wcss-settings.php:121
+msgid "Hub URL"
+msgstr "Hub-URL"
+
+#: includes/class-wcss-settings.php:124
+msgid "Only relevant when role = Spoke."
+msgstr "Endast relevant när roll = Spoke."
+
+#: includes/class-wcss-settings.php:128
+msgid "Spoke URLs"
+msgstr "Spoke-URL:er"
+
+#: includes/class-wcss-settings.php:131
+msgid "One URL per line. Only relevant when role = Hub."
+msgstr "En URL per rad. Endast relevant när roll = Hub."
+
+#: includes/class-wcss-settings.php:139
+msgid "Generate new shared secret"
+msgstr "Generera ny delad hemlighet"
+
+#: includes/class-wcss-settings.php:142
+msgid "Generate"
+msgstr "Generera"
+
+#: includes/class-wcss-settings.php:147
+msgid "Full resync"
+msgstr "Fullständig omsynkronisering"
+
+#: includes/class-wcss-settings.php:148
+msgid "Queues the current stock level of every product/variation with an SKU on this (hub) site for delivery to all spokes. Use after initial setup, or if something has gone out of sync."
+msgstr "Köar det aktuella lagersaldot för alla produkter/varianter med artikelnummer på denna (hub-)webbplats för leverans till alla spokes. Använd efter första installationen, eller om något har kommit ur synk."
+
+#: includes/class-wcss-settings.php:151
+msgid "Run full resync"
+msgstr "Kör fullständig omsynkronisering"
+
+#: includes/class-wcss-settings.php:156
+msgid "Outbound queue"
+msgstr "Utgående kö"
+
+#: includes/class-wcss-settings.php:160
+msgid "%d message(s) awaiting delivery (including any in retry backoff)."
+msgstr "%d meddelande(n) väntar på leverans (inklusive eventuella i backoff för nya försök)."
+
+#: includes/class-wcss-settings.php:165
+msgid "Recent events"
+msgstr "Senaste händelser"
+
+#: mountaineering-labs-stock-sync.php:42
+msgid "Mountaineering Labs Stock Sync requires WooCommerce to be active."
+msgstr "Mountaineering Labs Stock Sync kräver att WooCommerce är aktiverat."

@@ -1,0 +1,127 @@
+# Translation of mountaineering-labs-stock-sync in German
+msgid ""
+msgstr ""
+"Project-Id-Version: Mountaineering Labs Multi-Store Stock Sync for WooCommerce\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Domain: mountaineering-labs-stock-sync\n"
+
+#: includes/class-wcss-logger.php:31
+msgid "No events yet."
+msgstr "Noch keine Ereignisse."
+
+#: includes/class-wcss-logger.php:36
+msgid "Time"
+msgstr "Zeit"
+
+#: includes/class-wcss-logger.php:37
+msgid "Message"
+msgstr "Nachricht"
+
+#: includes/class-wcss-logger.php:38
+msgid "Details"
+msgstr "Details"
+
+#: includes/class-wcss-settings.php:49
+#: includes/class-wcss-settings.php:50
+msgid "Stock Sync"
+msgstr "Lagerabgleich"
+
+#: includes/class-wcss-settings.php:80
+msgid "New shared secret generated. Remember to set the same value on ALL connected sites."
+msgstr "Neues gemeinsames Geheimnis erzeugt. Denken Sie daran, denselben Wert auf ALLEN verbundenen Websites zu hinterlegen."
+
+#: includes/class-wcss-settings.php:86
+msgid "Full resync queued for %d product(s)/variation(s)."
+msgstr "Vollständiger Neuabgleich für %d Produkt(e)/Variante(n) in die Warteschlange gestellt."
+
+#: includes/class-wcss-settings.php:92
+msgid "Mountaineering Labs Stock Sync"
+msgstr "Mountaineering Labs Stock Sync"
+
+#: includes/class-wcss-settings.php:93
+msgid "Set up one site as the hub (authoritative stock) and the others as spokes. The same shared secret must be used on all connected sites."
+msgstr "Richten Sie eine Website als Hub (maßgeblicher Lagerbestand) ein und die anderen als Spokes. Auf allen verbundenen Websites muss dasselbe gemeinsame Geheimnis verwendet werden."
+
+#: includes/class-wcss-settings.php:99
+msgid "Role"
+msgstr "Rolle"
+
+#: includes/class-wcss-settings.php:102
+msgid "Spoke"
+msgstr "Spoke"
+
+#: includes/class-wcss-settings.php:103
+msgid "Hub"
+msgstr "Hub"
+
+#: includes/class-wcss-settings.php:108
+msgid "Site ID"
+msgstr "Website-ID"
+
+#: includes/class-wcss-settings.php:110
+msgid "e.g. main-store"
+msgstr "z. B. hauptshop"
+
+#: includes/class-wcss-settings.php:111
+msgid "Unique short identifier for this site (used in logs and to avoid loops)."
+msgstr "Eindeutige kurze Kennung für diese Website (wird in Protokollen und zur Vermeidung von Schleifen verwendet)."
+
+#: includes/class-wcss-settings.php:115
+msgid "Shared secret"
+msgstr "Gemeinsames Geheimnis"
+
+#: includes/class-wcss-settings.php:121
+msgid "Hub URL"
+msgstr "Hub-URL"
+
+#: includes/class-wcss-settings.php:124
+msgid "Only relevant when role = Spoke."
+msgstr "Nur relevant, wenn Rolle = Spoke."
+
+#: includes/class-wcss-settings.php:128
+msgid "Spoke URLs"
+msgstr "Spoke-URLs"
+
+#: includes/class-wcss-settings.php:131
+msgid "One URL per line. Only relevant when role = Hub."
+msgstr "Eine URL pro Zeile. Nur relevant, wenn Rolle = Hub."
+
+#: includes/class-wcss-settings.php:139
+msgid "Generate new shared secret"
+msgstr "Neues gemeinsames Geheimnis erzeugen"
+
+#: includes/class-wcss-settings.php:142
+msgid "Generate"
+msgstr "Erzeugen"
+
+#: includes/class-wcss-settings.php:147
+msgid "Full resync"
+msgstr "Vollständiger Neuabgleich"
+
+#: includes/class-wcss-settings.php:148
+msgid "Queues the current stock level of every product/variation with an SKU on this (hub) site for delivery to all spokes. Use after initial setup, or if something has gone out of sync."
+msgstr "Stellt den aktuellen Lagerbestand aller Produkte/Varianten mit Artikelnummer auf dieser (Hub-)Website zur Auslieferung an alle Spokes in die Warteschlange. Nach der Ersteinrichtung verwenden, oder wenn etwas nicht mehr synchron ist."
+
+#: includes/class-wcss-settings.php:151
+msgid "Run full resync"
+msgstr "Vollständigen Neuabgleich starten"
+
+#: includes/class-wcss-settings.php:156
+msgid "Outbound queue"
+msgstr "Ausgehende Warteschlange"
+
+#: includes/class-wcss-settings.php:160
+msgid "%d message(s) awaiting delivery (including any in retry backoff)."
+msgstr "%d Nachricht(en) warten auf Zustellung (einschließlich solcher im Wiederholungs-Backoff)."
+
+#: includes/class-wcss-settings.php:165
+msgid "Recent events"
+msgstr "Letzte Ereignisse"
+
+#: mountaineering-labs-stock-sync.php:42
+msgid "Mountaineering Labs Stock Sync requires WooCommerce to be active."
+msgstr "Mountaineering Labs Stock Sync erfordert ein aktiviertes WooCommerce."

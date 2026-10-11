@@ -2,9 +2,9 @@
 Contributors: mountaineeringlabs
 Tags: woocommerce, stock, synchronization, multistore, inventory
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ Run several WooCommerce stores that sell the same products — for example a dom
 
 **Languages**
 
-English admin UI, fully internationalized. Translations are managed through translate.wordpress.org and delivered automatically.
+English admin UI, with bundled translations for Norwegian (Bokmål and Nynorsk), Danish, Swedish, German, French and Spanish. Further translations can be contributed through translate.wordpress.org.
 
 == Installation ==
 
@@ -69,6 +69,10 @@ Ask your host about loopback requests and the number of concurrent PHP workers. 
 Identical SKUs are strongly recommended, but the `wcss_resolve_sku` filter lets developers map incoming SKUs to local product IDs in code.
 
 == Changelog ==
+
+= 1.4.2 =
+* Tested with WordPress 7.1 and WooCommerce 11.2.
+* Translations are bundled with the plugin again: Norwegian (Bokmål and Nynorsk), Danish, Swedish, German, French and Spanish.
 
 = 1.4.1 =
 * Display name now includes "Multi-Store" to better describe what the plugin does.

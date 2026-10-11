@@ -125,3 +125,23 @@ msgstr "Siste hendelser"
 #: mountaineering-labs-stock-sync.php:42
 msgid "Mountaineering Labs Stock Sync requires WooCommerce to be active."
 msgstr "Mountaineering Labs Stock Sync krever at WooCommerce er aktivert."
+
+#. Plugin header
+msgid "Mountaineering Labs Multi-Store Stock Sync for WooCommerce"
+msgstr "Mountaineering Labs Multi-Store Stock Sync for WooCommerce"
+
+#. Plugin header
+msgid "https://github.com/mountaineering-labs/mountaineering-labs-stock-sync"
+msgstr "https://github.com/mountaineering-labs/mountaineering-labs-stock-sync"
+
+#. Plugin header
+msgid "Mountaineering Labs"
+msgstr "Mountaineering Labs"
+
+#. Plugin header
+msgid "https://mountaineering.no"
+msgstr "https://mountaineering.no"
+
+#. Description of the plugin
+msgid "Central stock management across multiple WooCommerce installations (hub/spoke, SKU-based matching)."
+msgstr "Sentral lagerstyring på tvers av flere WooCommerce-installasjoner (hub/spoke, kobling på varenummer)."

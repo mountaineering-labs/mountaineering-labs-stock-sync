@@ -3,7 +3,7 @@
  * Plugin Name: Mountaineering Labs Multi-Store Stock Sync for WooCommerce
  * Plugin URI: https://github.com/mountaineering-labs/mountaineering-labs-stock-sync
  * Description: Central stock management across multiple WooCommerce installations (hub/spoke, SKU-based matching).
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: Mountaineering Labs
  * Author URI: https://mountaineering.no
  * License: GPL-2.0-or-later
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WCSS_VERSION', '1.4.1' );
+define( 'WCSS_VERSION', '1.4.2' );
 define( 'WCSS_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WCSS_URL', plugin_dir_url( __FILE__ ) );
 
